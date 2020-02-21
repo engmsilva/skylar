@@ -17,7 +17,7 @@ yarn start
 open http://localhost:3000
 ```
 
-Para executar o versão minificada do aplicativo localmente:
+Para executar a versão minificada do aplicativo localmente:
 
 ```bash
 serve -s build

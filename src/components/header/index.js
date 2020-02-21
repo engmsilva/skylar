@@ -23,7 +23,7 @@ export default function HeaderTempalte() {
 	const [ stateCore, dispatchCore ] = useContext(CoreContext); 
 	const { burger } = stateCore.menuButton
 	const activeBurger = burger ? "is-active" : '';	
-	console.log(usePath())
+	const href = "#"	
   return (
     <>
 	<nav className="navbar is-info" role="navigation" aria-label="main navigation">
@@ -37,7 +37,7 @@ export default function HeaderTempalte() {
 			aria-label="menu" aria-expanded="false" 
 			data-target="navbarBasicExample" 
 			onClick={() => dispatchCore({ type: 'activeBurger' })}
-			href="/#"
+			href={href}
 			>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
