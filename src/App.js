@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from 'react';
+import { useRoutes } from 'hookrouter';
+import Core from './components/core';
+import './App.sass';
+
+// Cofigura o carregamento lento
+const Home = lazy(() => import('./components/home'));
+const List = lazy(() => import('./components/list'));
+const FormEdit = lazy(() => import('./components/form/edit'));
+const FormCreate = lazy(() => import('./components/form/create'));
+
+// configura as rotas
+const appRoute = {
+  '/': () => <Home />,
+  '/list': () => <List />, 
+  '/form': () => <FormCreate />,   
+  '/form/:id': ({id}) => <FormEdit id={id}/>
+};
 
 function App() {
+  const routerResult = useRoutes(appRoute);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Core>
+      <Suspense
+        fallback={(
+          <div key="a23" className="spinner loader">
+          
+          </div>
+)}
+      >        
+            {routerResult }          
+      </Suspense>
+    </Core>
+  
+    </>
   );
 }
 
