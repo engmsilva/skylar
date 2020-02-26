@@ -13,6 +13,11 @@ export default function ListTempalte() {
     dispatchCore({ type: 'updateProfile' })
   }
 
+  function formatPhone(e) {
+    const value = e.replace(/\D/g, '').match(/(\d{3})(\d{1})(\d{4})(\d{4})/); 
+    return value && '(' + value[1] + ') ' + value[2] + ' ' + value[3] + '-' + value[4];	   
+  }
+
   return (
     <>
   <section className="section">
@@ -46,7 +51,7 @@ export default function ListTempalte() {
                           <td >{item.id}</td>
                           <td >{item.name}</td>
                           <td >{item.email}</td>
-                          <td >{item.phone}</td>                      
+                          <td >{formatPhone(item.phone)}</td>                      
                           <td >            
                           <div className="buttons">                
                               <A className="button is-small is-primary" exact="true" href={`/form/${item.id}`} >

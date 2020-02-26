@@ -6,15 +6,14 @@ import './App.sass';
 // Cofigura o carregamento lento
 const Home = lazy(() => import('./components/home'));
 const List = lazy(() => import('./components/list'));
-const FormEdit = lazy(() => import('./components/form/edit'));
-const FormCreate = lazy(() => import('./components/form/create'));
+const Form = lazy(() => import('./components/form/form'));
 
 // configura as rotas
 const appRoute = {
   '/': () => <Home />,
   '/list': () => <List />, 
-  '/form': () => <FormCreate />,   
-  '/form/:id': ({id}) => <FormEdit id={id}/>
+  '/form': () => <Form />,   
+  '/form/:id': ({id}) => <Form id={id}/>
 };
 
 function App() {

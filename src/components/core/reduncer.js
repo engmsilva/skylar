@@ -9,13 +9,13 @@ export const initialState = {
         id: 1,
         name: 'Marcelo Ribeiro',
         email: 'eng.msilva@yahoo.com.br',
-        phone: '19 9 7139-5714'      
+        phone: '019971395714'      
       },
       {
         id: 2,
         name: 'Isabeli Ribeiro',
         email: 'isabeli@yahoo.com.br',
-        phone: '19 9 7139-5714'      
+        phone: '019971395714'      
       }
     ],
    
