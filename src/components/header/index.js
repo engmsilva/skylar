@@ -46,10 +46,10 @@ export default function HeaderTempalte() {
  	 </div>
 	<div id="navbarBasicExample" className={`navbar-menu ${activeBurger}`}>
 		<div className="navbar-start">   
-			<NavLink  exact="true" href="/"  onClick={() => dispatchCore({ type: 'menuHome' })}>
+			<NavLink  exact="true" href="/">
 				Home
 			</NavLink>
-			<NavLink exact="true" href="/list" onClick={() => dispatchCore({ type: 'menuContact' })} >
+			<NavLink exact="true" href="/list">
 				Contatos
 			</NavLink>     
 		</div>   
