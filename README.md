@@ -19,6 +19,19 @@ open http://localhost:3000
 
 Para executar a versão minificada do aplicativo localmente:
 
+Instalação do servidor Node
+
+```bash
+yarn global add serve
+export PATH="$PATH:$(yarn global bin)"
+```
+Exportar caminho de instalação do servidor para variável de ambiente do sistema operacional.
+
+```bash
+export PATH="$PATH:$(yarn global bin)" // exemplo usando no Ubuntu
+```
+Execute o servidor
+
 ```bash
 serve -s build
 open http://localhost:5000
