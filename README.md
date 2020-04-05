@@ -23,7 +23,6 @@ Instalação do servidor Node
 
 ```bash
 yarn global add serve
-export PATH="$PATH:$(yarn global bin)"
 ```
 Exportar caminho de instalação do servidor para variável de ambiente do sistema operacional.
 
